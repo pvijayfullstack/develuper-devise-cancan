@@ -1,4 +1,13 @@
 DeveluperDeviseCancan::Application.routes.draw do
+  
+  devise_for :users
+  
+  resources :home, :only => :index
+  
+  root :to => 'home#index'
+  
+  match '/token' => 'home#token', :as => :token
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
