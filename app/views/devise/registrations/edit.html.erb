@@ -22,4 +22,10 @@
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
 
+<h3>Roles</h3>
+
+<% if can? :read, User %>
+	<p>you can read home</p>
+<% end %>
+
 <%= link_to "Back", :back %>
